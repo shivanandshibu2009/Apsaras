@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Sparkles, Instagram, Facebook, Twitter, Mail, MapPin, Phone, MessageCircle } from 'lucide-react';
+import { Sparkles, Instagram, Facebook, Twitter, MapPin, Phone, MessageCircle } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -90,7 +90,7 @@ const Footer = () => {
         {/* copyright */}
         <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-stone-500 text-[10px] uppercase font-bold tracking-[0.2em]">
-            © 2024 Apsaras Hi-Tech Beauty Parlour & Spa. All Rights Reserved.
+            © 2026 Apsaras Hi-Tech Beauty Parlour & Spa. All Rights Reserved.
           </p>
           <div className="flex gap-6">
             <a href="#" className="text-stone-500 text-[10px] uppercase font-bold hover:text-white transition-colors">Privacy Policy</a>
