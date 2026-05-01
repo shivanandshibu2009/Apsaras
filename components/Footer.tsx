@@ -34,7 +34,7 @@ const Footer = () => {
           <div>
             <h4 className="text-sm uppercase tracking-[0.2em] font-bold text-[#c5a059] mb-8 font-sans">Explore</h4>
             <ul className="space-y-4">
-              {['Home', 'About', 'Services', 'Booking', 'Locations'].map((link) => (
+              {['Home', 'About', 'Services', 'Booking', 'Payment', 'Locations'].map((link) => (
                 <li key={link}>
                   <a href={`#${link.toLowerCase()}`} className="text-stone-500 hover:text-[#c5a059] transition-colors text-sm font-light">
                     {link}
@@ -82,14 +82,6 @@ const Footer = () => {
                   <MessageCircle className="w-4 h-4 text-green-500" />
                 </div>
                 <p className="text-stone-500 text-sm font-light">Available on WhatsApp</p>
-              </li>
-              <li className="flex items-center gap-3">
-                <div className="bg-white/5 p-2 rounded-lg border border-white/10">
-                  <Mail className="w-4 h-4 text-[#c5a059]" />
-                </div>
-                <a href="mailto:apsarashitechbeautyparlour@gmail.com" className="text-stone-500 text-xs font-light hover:text-[#c5a059] transition-colors">
-                  apsarashitechbeautyparlour@gmail.com
-                </a>
               </li>
             </ul>
           </div>

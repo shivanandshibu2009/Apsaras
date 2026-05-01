@@ -2,14 +2,13 @@
 
 import React from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Calendar, Clock, User, Phone, Sparkles, Send, CheckCircle, Mail } from 'lucide-react';
+import { Calendar, Clock, User, Phone, Sparkles, Send, CheckCircle } from 'lucide-react';
 
 const BookingForm = () => {
   const [isSubmitted, setIsSubmitted] = React.useState(false);
   const [formData, setFormData] = React.useState({
     name: '',
     phone: '',
-    email: '',
     service: '',
     date: '',
     time: ''
@@ -21,27 +20,19 @@ const BookingForm = () => {
     "Waxing", "Bridal Makeup", "Pimple/Pigmentation Treatment"
   ];
 
-  const handleSubmit = (e: React.FormEvent, method: 'whatsapp' | 'email') => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
     const message = `Hello Apsaras, I would like to book an appointment:
 *Name:* ${formData.name}
 *Phone:* ${formData.phone}
-*Email:* ${formData.email}
 *Service:* ${formData.service}
 *Date:* ${formData.date}
 *Time:* ${formData.time}`;
 
-    if (method === 'whatsapp') {
-      const encodedMessage = encodeURIComponent(message);
-      const whatsappUrl = `https://wa.me/9447531988?text=${encodedMessage}`;
-      window.open(whatsappUrl, '_blank');
-    } else {
-      const subject = encodeURIComponent(`Booking Request: ${formData.name} - ${formData.service}`);
-      const body = encodeURIComponent(message.replace(/\*/g, ''));
-      const mailtoUrl = `mailto:apsarashitechbeautyparlour@gmail.com?subject=${subject}&body=${body}`;
-      window.open(mailtoUrl, '_blank');
-    }
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/9447531988?text=${encodedMessage}`;
+    window.open(whatsappUrl, '_blank');
     
     setIsSubmitted(true);
   };
@@ -137,20 +128,6 @@ const BookingForm = () => {
 
                   <div className="space-y-2">
                     <label className="text-[10px] uppercase font-bold tracking-widest text-[#c5a059]/60 flex items-center gap-2">
-                      <Mail className="w-3 h-3" /> Email Address
-                    </label>
-                    <input
-                      required
-                      type="email"
-                      placeholder="Your Gmail/Email"
-                      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-[#c5a059] outline-none transition-all placeholder:text-stone-700"
-                      value={formData.email}
-                      onChange={(e) => setFormData({...formData, email: e.target.value})}
-                    />
-                  </div>
-
-                  <div className="space-y-2">
-                    <label className="text-[10px] uppercase font-bold tracking-widest text-[#c5a059]/60 flex items-center gap-2">
                       <Sparkles className="w-3 h-3" /> Preferred Service
                     </label>
                     <select
@@ -195,22 +172,14 @@ const BookingForm = () => {
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="flex flex-col gap-4">
                     <button
                       type="button"
-                      onClick={(e) => handleSubmit(e, 'whatsapp')}
-                      className="bg-[#c5a059] text-black font-bold py-4 rounded-xl flex items-center justify-center gap-3 hover:bg-[#d4af37] transition-all transform hover:scale-[1.02] active:scale-95 group text-xs uppercase tracking-widest"
+                      onClick={handleSubmit}
+                      className="bg-[#c5a059] text-black font-bold py-4 rounded-xl flex items-center justify-center gap-3 hover:bg-[#d4af37] transition-all transform hover:scale-[1.02] active:scale-95 group text-xs uppercase tracking-widest w-full"
                     >
-                      WhatsApp
+                      Book via WhatsApp
                       <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </button>
-                    <button
-                      type="button"
-                      onClick={(e) => handleSubmit(e, 'email')}
-                      className="bg-white/5 text-[#c5a059] border border-[#c5a059]/30 font-bold py-4 rounded-xl flex items-center justify-center gap-3 hover:bg-white/10 transition-all transform hover:scale-[1.02] active:scale-95 group text-xs uppercase tracking-widest"
-                    >
-                      Gmail / Email
-                      <Mail className="w-4 h-4" />
                     </button>
                   </div>
                   
