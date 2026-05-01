@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
     <html lang="en" className={`${cormorant.variable} ${montserrat.variable}`}>
-      <body suppressHydrationWarning className="font-sans antialiased text-stone-900 bg-[#f5f2ed]">
+      <body suppressHydrationWarning className="font-sans antialiased text-stone-200 bg-[#121010]">
         {children}
       </body>
     </html>

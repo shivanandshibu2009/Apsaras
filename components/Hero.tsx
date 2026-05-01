@@ -27,9 +27,9 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/20 text-amber-200 border border-amber-500/30 backdrop-blur-sm mb-6"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#c5a059]/20 text-[#c5a059] border border-[#c5a059]/30 backdrop-blur-sm mb-6"
           >
-            <Star className="w-4 h-4 fill-amber-500" />
+            <Star className="w-4 h-4 fill-[#c5a059]" />
             <span className="text-xs font-bold uppercase tracking-[0.2em]">10+ Years of Excellence</span>
           </motion.div>
 
@@ -39,14 +39,14 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-5xl md:text-7xl lg:text-8xl font-serif font-light text-white leading-tight mb-6"
           >
-            Enhancing Your <span className="italic font-normal text-amber-400">Beauty</span> with Expertise
+            Enhancing Your <span className="italic font-normal text-[#c5a059]">Beauty</span> with Expertise
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-lg md:text-xl text-stone-300 mb-10 max-w-xl font-light"
+            className="text-lg md:text-xl text-stone-400 mb-10 max-w-xl font-light"
           >
             At Apsaras Hi-Tech Beauty Parlour & Spa, we combine modern techniques 
             with personalized care to reveal your naturally radiant self.
@@ -60,16 +60,16 @@ const Hero = () => {
           >
             <a
               href="#services"
-              className="bg-amber-600 text-white px-8 py-4 rounded-full font-bold flex items-center justify-center gap-2 border-2 border-amber-600 hover:bg-transparent hover:text-white transition-all transform hover:scale-105"
+              className="bg-[#c5a059] text-black px-8 py-4 rounded-full font-bold flex items-center justify-center gap-2 border-2 border-[#c5a059] hover:bg-transparent hover:text-[#c5a059] transition-all transform hover:scale-105"
             >
               Explore Services
               <ArrowRight className="w-5 h-5" />
             </a>
             <a
-              href="tel:9447531988"
-              className="bg-white/10 text-white backdrop-blur-md px-8 py-4 rounded-full font-bold flex items-center justify-center gap-2 border border-white/20 hover:bg-white/20 transition-all"
+              href="#online-booking"
+              className="bg-white/5 text-white backdrop-blur-md px-8 py-4 rounded-full font-bold flex items-center justify-center gap-2 border border-white/20 hover:bg-white/20 transition-all"
             >
-              Call to Book
+              Book Online
             </a>
           </motion.div>
         </div>

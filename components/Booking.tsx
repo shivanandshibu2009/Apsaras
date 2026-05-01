@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { MessageCircle, Phone, Instagram, MapPin, Calendar, Clock } from 'lucide-react';
+import BookingForm from './BookingForm';
 
 const Booking = () => {
   const steps = [
@@ -33,12 +34,12 @@ const Booking = () => {
   ];
 
   return (
-    <section id="booking" className="py-24 bg-white relative overflow-hidden">
+    <section id="booking" className="py-24 bg-[#121010] relative overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="text-xs uppercase tracking-[0.3em] font-bold text-amber-600 mb-4">Reservations</h2>
-          <h3 className="text-4xl md:text-5xl font-serif font-light text-stone-900 mb-6">
-            Book Your <span className="italic text-amber-600">Session</span>
+          <h2 className="text-xs uppercase tracking-[0.3em] font-bold text-[#c5a059] mb-4">Reservations</h2>
+          <h3 className="text-4xl md:text-5xl font-serif font-light text-white mb-6">
+            Book Your <span className="italic text-[#c5a059]">Session</span>
           </h3>
           <p className="text-stone-500 font-light">
             Booking your beauty escape is simple and convenient. Choose your preferred way to reach us.
@@ -53,18 +54,18 @@ const Booking = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="bg-stone-50 p-8 rounded-[2.5rem] flex flex-col items-center text-center hover:shadow-xl transition-all border border-stone-100 group"
+              className="bg-white/5 p-8 rounded-[2.5rem] flex flex-col items-center text-center hover:shadow-xl transition-all border border-white/5 group hover:bg-white/[0.08]"
             >
               <div className={`${step.color} p-5 rounded-2xl mb-6 shadow-lg transform group-hover:scale-110 transition-transform`}>
                 {step.icon}
               </div>
-              <h4 className="text-2xl font-serif font-bold text-stone-900 mb-4">{step.title}</h4>
-              <p className="text-stone-500 font-light mb-8 h-18">{step.desc}</p>
+              <h4 className="text-2xl font-serif font-bold text-white mb-4">{step.title}</h4>
+              <p className="text-stone-400 font-light mb-8 h-18">{step.desc}</p>
               <a
                 href={step.action}
                 target={step.btnText.includes('Call') ? undefined : "_blank"}
                 rel="noopener noreferrer"
-                className="w-full py-4 rounded-full font-bold text-xs uppercase tracking-widest bg-stone-900 text-white hover:bg-amber-600 transition-colors"
+                className="w-full py-4 rounded-full font-bold text-[10px] uppercase tracking-[0.2em] bg-[#c5a059] text-black hover:bg-[#d4af37] transition-colors"
               >
                 {step.btnText}
               </a>
@@ -72,31 +73,33 @@ const Booking = () => {
           ))}
         </div>
 
-        <div className="mt-16 bg-stone-900 rounded-[3rem] p-12 text-white overflow-hidden relative">
+        <BookingForm />
+
+        <div className="mt-16 bg-[#0a0909] rounded-[3rem] p-12 text-white overflow-hidden relative border border-[#c5a059]/10">
           <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
               <h4 className="text-3xl font-serif font-light mb-6">Operational Hours</h4>
               <div className="space-y-4">
                 <div className="flex items-center gap-4">
-                  <div className="bg-white/10 p-2 rounded-lg">
-                    <Calendar className="w-5 h-5 text-amber-400" />
+                  <div className="bg-white/5 p-2 rounded-lg">
+                    <Calendar className="w-5 h-5 text-[#c5a059]" />
                   </div>
                   <div>
-                    <p className="text-[10px] uppercase tracking-widest text-white/50 font-bold">Days</p>
+                    <p className="text-[10px] uppercase tracking-widest text-[#c5a059]/50 font-bold">Days</p>
                     <p className="font-medium">Monday — Saturday</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
-                  <div className="bg-white/10 p-2 rounded-lg">
-                    <Clock className="w-5 h-5 text-amber-400" />
+                  <div className="bg-white/5 p-2 rounded-lg">
+                    <Clock className="w-5 h-5 text-[#c5a059]" />
                   </div>
                   <div>
-                    <p className="text-[10px] uppercase tracking-widest text-white/50 font-bold">Time</p>
+                    <p className="text-[10px] uppercase tracking-widest text-[#c5a059]/50 font-bold">Time</p>
                     <p className="font-medium">9:00 AM – 6:00 PM</p>
                   </div>
                 </div>
-                <div className="flex items-center gap-4 text-red-400">
-                  <div className="bg-red-400/10 p-2 rounded-lg">
+                <div className="flex items-center gap-4 text-red-400/80">
+                  <div className="bg-red-400/5 p-2 rounded-lg">
                     <Calendar className="w-5 h-5" />
                   </div>
                   <div>
@@ -108,10 +111,10 @@ const Booking = () => {
             </div>
             <div className="bg-white/5 backdrop-blur-md p-8 rounded-3xl border border-white/10">
               <h5 className="text-xl font-serif mb-4 flex items-center gap-2">
-                <Star className="w-5 h-5 text-amber-400 fill-amber-400" />
+                <Star className="w-5 h-5 text-[#c5a059] fill-[#c5a059]" />
                 Note to Clients
               </h5>
-              <p className="text-stone-300 font-light leading-relaxed">
+              <p className="text-stone-400 font-light leading-relaxed">
                 Walk-ins are welcome for simple services. However, advance booking is 
                 <span className="text-white font-medium"> highly recommended</span> for bridal makeup, complex hair treatments, 
                 and peak weekend hours.
@@ -119,7 +122,7 @@ const Booking = () => {
             </div>
           </div>
           {/* Abstract pattern */}
-          <div className="absolute top-0 right-0 w-64 h-64 bg-amber-600/10 blur-[100px] -translate-y-1/2 translate-x-1/2"></div>
+          <div className="absolute top-0 right-0 w-64 h-64 bg-[#c5a059]/10 blur-[100px] -translate-y-1/2 translate-x-1/2"></div>
         </div>
       </div>
     </section>

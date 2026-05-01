@@ -81,12 +81,12 @@ const Services = () => {
   };
 
   return (
-    <section id="services" className="py-24 bg-[#f5f2ed]">
+    <section id="services" className="py-24 bg-[#0a0909]">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="text-xs uppercase tracking-[0.3em] font-bold text-amber-600 mb-4">Our Menu</h2>
-          <h3 className="text-4xl md:text-5xl font-serif font-light text-stone-900 mb-6">
-            Curated <span className="italic text-amber-600">Services</span>
+          <h2 className="text-xs uppercase tracking-[0.3em] font-bold text-[#c5a059] mb-4">Our Menu</h2>
+          <h3 className="text-4xl md:text-5xl font-serif font-light text-white mb-6">
+            Curated <span className="italic text-[#c5a059]">Services</span>
           </h3>
           <p className="text-stone-500 font-light">
             Each service is delivered with precision using advanced techniques and premium products. 
@@ -99,10 +99,10 @@ const Services = () => {
             <button
               key={cat.id}
               onClick={() => setActiveCategory(cat.id)}
-              className={`flex items-center gap-2 px-6 py-3 rounded-full text-xs uppercase tracking-widest font-bold transition-all border ${
+              className={`flex items-center gap-2 px-6 py-3 rounded-full text-[10px] uppercase tracking-widest font-bold transition-all border ${
                 activeCategory === cat.id
-                  ? 'bg-amber-600 text-white border-amber-600 shadow-lg'
-                  : 'bg-white text-stone-600 border-stone-200 hover:border-amber-400'
+                  ? 'bg-[#c5a059] text-black border-[#c5a059] shadow-lg scale-105'
+                  : 'bg-white/5 text-stone-400 border-white/10 hover:border-[#c5a059]/40'
               }`}
             >
               {cat.icon}
@@ -117,34 +117,34 @@ const Services = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
-            className="bg-white rounded-[2rem] p-8 md:p-12 shadow-xl border border-stone-100"
+            className="bg-[#121010] rounded-[2rem] p-8 md:p-12 shadow-2xl border border-white/5"
           >
-            <h4 className="text-3xl font-serif font-light text-stone-900 mb-10 border-b border-stone-100 pb-6 flex items-center justify-between">
+            <h4 className="text-3xl font-serif font-light text-white mb-10 border-b border-white/5 pb-6 flex items-center justify-between">
               {activeCategory}
-              <span className="text-xs font-sans uppercase tracking-widest text-amber-600 font-bold">Price List</span>
+              <span className="text-[10px] font-sans uppercase tracking-[0.2em] text-[#c5a059] font-bold">Premium Care</span>
             </h4>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6">
               {serviceData[activeCategory]?.map((service, index) => (
                 <div key={index} className="flex justify-between items-end group">
                   <div className="flex-1">
-                    <p className="text-stone-900 font-medium group-hover:text-amber-600 transition-colors">
+                    <p className="text-stone-300 font-light group-hover:text-[#c5a059] transition-colors">
                       {service.name}
                     </p>
-                    <div className="border-b border-dotted border-stone-200 w-full mb-1"></div>
+                    <div className="border-b border-dotted border-white/10 w-full mb-1"></div>
                   </div>
-                  <span className="text-amber-700 font-serif font-bold ml-4 whitespace-nowrap">
+                  <span className="text-[#c5a059] font-serif font-bold ml-4 whitespace-nowrap">
                     {service.price}
                   </span>
                 </div>
               ))}
             </div>
             
-            <div className="mt-12 bg-amber-50 p-6 rounded-2xl border border-amber-100 flex items-center justify-between">
-              <p className="text-sm text-stone-600 italic">
+            <div className="mt-12 bg-[#c5a059]/5 p-6 rounded-2xl border border-[#c5a059]/10 flex items-center justify-between">
+              <p className="text-sm text-stone-500 italic">
                 * Advance booking recommended for bridal makeup and special treatments.
               </p>
-              <ChevronRight className="w-5 h-5 text-amber-600" />
+              <ChevronRight className="w-5 h-5 text-[#c5a059]" />
             </div>
           </motion.div>
         </div>
