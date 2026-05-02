@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'motion/react';
-import { CreditCard, QrCode, ExternalLink, ShieldCheck, Wallet } from 'lucide-react';
+import { CreditCard, QrCode, ExternalLink, ShieldCheck, Wallet, Send } from 'lucide-react';
 import { QRCodeSVG } from 'qrcode.react';
 
 const Payment = () => {
@@ -98,13 +98,25 @@ const Payment = () => {
               </div>
             </div>
 
-            <a
-              href={upiUrl}
-              className="w-full bg-[#c5a059] text-black font-bold py-5 px-8 rounded-full flex items-center justify-center gap-3 hover:bg-[#d4af37] transition-all transform hover:scale-[1.02] active:scale-95 group shadow-lg shadow-[#c5a059]/10"
-            >
-              <ExternalLink className="w-5 h-5" />
-              <span className="uppercase tracking-widest text-sm">Pay with UPI App</span>
-            </a>
+            <div className="flex flex-col gap-4">
+              <a
+                href={upiUrl}
+                className="w-full bg-[#c5a059] text-black font-bold py-5 px-8 rounded-full flex items-center justify-center gap-3 hover:bg-[#d4af37] transition-all transform hover:scale-[1.02] active:scale-95 group shadow-lg shadow-[#c5a059]/10"
+              >
+                <ExternalLink className="w-5 h-5" />
+                <span className="uppercase tracking-widest text-sm">Pay in Parlour UPI</span>
+              </a>
+
+              <a
+                href="https://wa.me/9447531988?text=Hello%20Apsaras%2C%20I%20have%20completed%20the%20UPI%20payment%20for%20my%20service.%20Please%20find%20the%20screenshot%20attached."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full bg-[#25D366] text-white font-bold py-4 px-8 rounded-full flex items-center justify-center gap-3 hover:bg-[#128C7E] transition-all transform hover:scale-[1.02] active:scale-95 group shadow-lg"
+              >
+                <Send className="w-4 h-4" />
+                <span className="uppercase tracking-widest text-[10px]">Send Image to WhatsApp</span>
+              </a>
+            </div>
 
             <div className="flex items-center justify-center gap-4 opacity-50 grayscale contrast-125 pt-4">
               <CreditCard className="w-6 h-6 text-white" />
